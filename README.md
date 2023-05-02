@@ -6,6 +6,6 @@
 
 3 - npm start
 
-4 - npm eun build (for production build)
+4 - npm run build (for production build)
 
 5 - npm run test (run test suits)
