@@ -45,12 +45,14 @@ export default function HomeApp() {
     dispatch(retrieveCategories());
   }, []);
 
+  /* Function to get 5 random drinks */
   const getRandomDrinks = () => {
     for (let i = 0; i < 5; i++) {
       dispatch(retrieveRandomCocktail());
     }
   };
 
+  /* select entites from store */
   const randomCocktailsList = useSelector(
     (state) => state.cocktails.list.randomDrinks
   );
@@ -60,6 +62,7 @@ export default function HomeApp() {
   const IngredientsList = useSelector((state) => state.ingredients.list.values);
   const categoriesList = useSelector((state) => state.categories.list.values);
 
+  /* watch for changing filters and fetch data from backend api */
   useEffect(() => {
     if (searchText !== null && searchText !== "") {
       dispatch(retrieveCocktailBySearchText(searchText));
@@ -84,6 +87,7 @@ export default function HomeApp() {
     }
   }, [searchIngrediant]);
 
+  /* modify favourites list */
   const addToFavourites = (item) => {
     const favListNew = [];
     favListNew.push(...favList);
@@ -101,6 +105,7 @@ export default function HomeApp() {
     setFavList(favListNew);
   };
 
+  /* functions to change filter and search state variables */
   const handleChangeAlphabet = (value) => {
     setSearchAlphabet(value);
   };

@@ -7,6 +7,7 @@ export default function FavouriteDrinks({
   addToFavourites,
   removeFromFavourites,
 }) {
+  /* Not rendering favourite drinks component*/
   if (favList.length === 0) {
     return (
       <div className="not-found-drinks gray-font">
@@ -15,6 +16,7 @@ export default function FavouriteDrinks({
     );
   }
 
+  /* Render favourite drinks */
   return (
     <Box>
       <Typography variant="h6" className="heading-favourite-drinks gray-font">

@@ -46,10 +46,12 @@ export default function DrinksList({
     }
   };
 
+  /* Not rendering drinks component*/
   if (renderCocktailsList.length === 0) {
     return <div className="no-drinks gray-font">No drinks found !</div>;
   }
 
+  /* Render drinks */
   return (
     <Box>
       <Typography variant="h6" className="drinks-list-heading gray-font">
